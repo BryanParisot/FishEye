@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  //variables
+  $bgPrimary:  #901C1C;
+  $colorPrimary: #D3573C;
+  $bgSecondary: #D3573C;
+  $bgSecondaryTwo: #525252;
+  $colorSecondary:#901C1C;
+  
+  //mixins
+  @mixin verticalCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  a{
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
