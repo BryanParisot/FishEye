@@ -1,0 +1,30 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 45px 117px 0px;
+    
+
+    img{
+        width: 200px;
+        height: 50px
+    }
+
+    h1{
+        font-weight: 400;
+        font-family: DM Sans;
+    }
+
+    nav{
+        width: 553px;
+        text-align: center;
+        a{
+            font-size: .75rem;
+            color: $colorSecondary;
+            border-radius: 40px;
+            border: 0.5px solid #C4C4C4;
+            padding: 5px;
+            margin-left: 4px;
+        }
+    }
+}
