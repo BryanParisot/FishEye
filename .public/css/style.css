@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=style.css.map */
