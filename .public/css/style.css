@@ -4,6 +4,10 @@
   margin: 0px;
 }
 
+body {
+  width: 100vw;
+}
+
 li {
   list-style: none;
 }
@@ -34,11 +38,33 @@ header nav {
 }
 header nav a {
   font-size: 0.75rem;
-  color: #901C1C;
+  color: #901c1c;
   border-radius: 40px;
   border: 0.5px solid #C4C4C4;
   padding: 5px;
   margin-left: 4px;
+}
+
+#btn_home {
+  width: 182px;
+  height: 30px;
+  padding: 4px;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #DB8876;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 6px auto 0px;
+}
+#btn_home:hover {
+  background-color: #901c1c;
+  color: #fff;
 }
 
 /*# sourceMappingURL=style.css.map */
