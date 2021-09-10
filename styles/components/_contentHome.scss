@@ -1,0 +1,14 @@
+#btn_home{
+    @include btn;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 6px auto 0px;
+
+        &:hover{
+            background-color: $bgPrimary;
+            color: #fff;
+        }
+    
+}

@@ -1,8 +1,8 @@
- async function findData(){
+ export default class dataApi{
+ async  findData(){
     let url = 'data/dataPhotographers.json';
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data)
 
     const photographers = data.photographers
     const medias = data.media
@@ -12,4 +12,4 @@
       'media': medias
     }
   }
-  findData()
+}

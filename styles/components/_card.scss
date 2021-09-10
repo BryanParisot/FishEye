@@ -1,0 +1,58 @@
+.contain_cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: $dm;
+  margin-top: 75px;
+
+  .articlePh {
+    text-align: center;
+    width: 400px;
+    height: auto;
+    margin-bottom: 100px;
+
+
+    a {
+      img {
+        border-radius: 50%;
+        height: 170px;
+        width: 200px;
+        margin-bottom: 10px;
+      }
+      .name {
+        font-size: 36px;
+        color: $colorPrimary;
+        margin-bottom: 3px;
+      }
+    }
+    .city{
+        font-size: 13px;
+        margin-bottom: 3px;
+    }
+    .tagline{
+        font-size: 10px;
+        margin-bottom: 3px;
+    }
+    .price{
+        font-size: 11.72px;
+        color: #757575;
+        margin-bottom: 3px;
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin-top: 4px;
+
+        li{
+            border:  0.5px solid #C4C4C4;
+            border-radius: 11px;
+            padding: 4px;
+            margin-left: 5px;
+            color: #901C1C;
+        }
+    }
+  }
+}

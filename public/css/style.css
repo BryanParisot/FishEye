@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  width: 100vw;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 45px 117px 0px;
+}
+header img {
+  width: 200px;
+  height: 50px;
+}
+header h1 {
+  font-weight: 400;
+  font-family: DM Sans;
+}
+header nav {
+  width: 553px;
+  text-align: center;
+}
+header nav a {
+  font-size: 0.75rem;
+  color: #901c1c;
+  border-radius: 40px;
+  border: 0.5px solid #C4C4C4;
+  padding: 5px;
+  margin-left: 4px;
+}
+
+#btn_home {
+  width: 182px;
+  height: 30px;
+  padding: 4px;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #DB8876;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 6px auto 0px;
+}
+#btn_home:hover {
+  background-color: #901c1c;
+  color: #fff;
+}
+
+.contain_cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "DM Sans", sans-serif;
+  margin-top: 75px;
+}
+.contain_cards .articlePh {
+  text-align: center;
+  width: 400px;
+  height: auto;
+  margin-bottom: 100px;
+}
+.contain_cards .articlePh a img {
+  border-radius: 50%;
+  height: 170px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+.contain_cards .articlePh a .name {
+  font-size: 36px;
+  color: #d3573c;
+  margin-bottom: 3px;
+}
+.contain_cards .articlePh .city {
+  font-size: 13px;
+  margin-bottom: 3px;
+}
+.contain_cards .articlePh .tagline {
+  font-size: 10px;
+  margin-bottom: 3px;
+}
+.contain_cards .articlePh .price {
+  font-size: 11.72px;
+  color: #757575;
+  margin-bottom: 3px;
+}
+.contain_cards .articlePh ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 4px;
+}
+.contain_cards .articlePh ul li {
+  border: 0.5px solid #C4C4C4;
+  border-radius: 11px;
+  padding: 4px;
+  margin-left: 5px;
+  color: #901C1C;
+}
+
+/*# sourceMappingURL=style.css.map */
