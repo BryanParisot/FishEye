@@ -61,19 +61,18 @@
     flex-direction: row;
 
     li {
-      .tags_profil {
         border: 0.5px solid #c4c4c4;
         border-radius: 12px;
         padding: 3px;
         margin-left: 3px;
         color: #8f3e3e;
-      }
     }
   }
   .container_btn {
       height: 100%;
     button {
       @include btn;
+      cursor: pointer;
       color: white;
       width: 170px;
       height: 69px;
