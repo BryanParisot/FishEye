@@ -7,9 +7,11 @@ export default class displayHome {
       response.photographer.map((photographer) => {
         let create = document.createElement("article");
         const containMain = document.getElementById("contain_cards");
-        create.className = photographer.tags.join(' ') + ' articlePhotographer';
+        create.className = photographer.tags.join(" ") + " articlePhotographer";
         let templatePhotographer = `
-      <a href="#" title=${photographer.name}>
+      <a href="photographeUnique.html?id=${photographer.id}" title=${
+          photographer.name
+        }>
         <img src="${photographer.portrait}" alt="" />
         <h2 class="name">${photographer.name}</h2>
       </a>
@@ -17,9 +19,13 @@ export default class displayHome {
       <p class="tagline">${photographer.tagline}</p>
       <span class="price">${photographer.price}/jours</span>
       <ul class="filter">
-        ${photographer.tags .map((item) => `
+        ${photographer.tags
+          .map(
+            (item) => `
         <li>#${item}</li>
-        `) .join(" ")}
+        `
+          )
+          .join(" ")}
       </ul>
       
             `;

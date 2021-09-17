@@ -1,0 +1,85 @@
+.container_profil {
+  display: flex;
+  flex-direction: row;
+  width: 1240px;
+  height: 313px;
+  background: #fafafa;
+  margin: 50px auto 0px;
+
+  .container_description_profil {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    margin-left: 50px;
+
+    .container_description_flex{
+      display: flex;
+      height: 100%;
+      width: 70%;
+
+      .container_for_width{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+      }
+    }
+
+
+    .name_profil {
+      font-size: 64px;
+      color: $colorPrimary;
+      margin-bottom: 10px;
+    }
+    .ville_profil {
+      font-size: 24px;
+      color: #901c1c;
+      margin-bottom: 10px;
+    }
+    .txt_profil {
+      font-size: 18px;
+      color: #525252;
+      margin-bottom: 10px;
+    }
+  }
+
+  .container_img {
+    width: 30%;
+    @include verticalCenter;
+
+    img {
+      border-radius: 50%;
+      height: 200px;
+      width: 200px;
+    }
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+      .tags_profil {
+        border: 0.5px solid #c4c4c4;
+        border-radius: 12px;
+        padding: 3px;
+        margin-left: 3px;
+        color: #8f3e3e;
+      }
+    }
+  }
+  .container_btn {
+      height: 100%;
+    button {
+      @include btn;
+      color: white;
+      width: 170px;
+      height: 69px;
+      background-color: #901c1c;
+      margin-top: 63px;
+      margin-left: 120px;
+    }
+  }
+}
