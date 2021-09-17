@@ -7,7 +7,7 @@ export default class displayHome {
       response.photographer.map((photographer) => {
         let create = document.createElement("article");
         const containMain = document.getElementById("contain_cards");
-        create.className = "articlePh";
+        create.className = photographer.tags.join(' ') + ' articlePhotographer';
         let templatePhotographer = `
       <a href="#" title=${photographer.name}>
         <img src="${photographer.portrait}" alt="" />
