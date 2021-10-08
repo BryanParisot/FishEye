@@ -1,0 +1,65 @@
+#formContact {
+  display: none;
+}
+.bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  background: white;
+
+  .formulaire {
+    display: flex;
+    flex-direction: column;
+    height: 730px;
+    width: 669px;
+    font-family: $dm;
+    border-radius: 5px;
+    background-color: #db8876;
+    margin: auto;
+    margin-top: 31px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    padding: 35px;
+    line-height: 50px;
+
+    .header_formulaire {
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        font-size: 52px;
+        margin-bottom: 20px;
+      }
+      #close {
+        cursor: pointer;
+        font-size: 40px;
+        color: white;
+      }
+      #namePh {
+        font-size: 52px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    }
+
+    input {
+      height: 68px;
+      border: none;
+      border-radius: 5px;
+    }
+    #message {
+      height: 170px;
+    }
+    button {
+      background: rgba(144, 28, 28, 1);
+      width: 170px;
+      height: 89px;
+      margin-top: 26px;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+  }
+}
