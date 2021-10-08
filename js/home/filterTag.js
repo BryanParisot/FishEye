@@ -1,15 +1,13 @@
 // export default class filterTag {
 function test() {
-  let filtres = document.getElementById("navigation");
-  let articles = document.querySelectorAll('.articlePh');
-  console.log(filtres);
-  console.log(articles)
-
-  filtres.addEventListener("click", (e) => {
-    let classValue = e.target.classList.value;
-
-    console.log(e.target.classList);
-  });
+  let filtres = document.getElementsByClassName("cat");
+  
+  //récupérer les clicks des filtres
+  for (let i = 0; i < filtres.length; i++) {
+    filtres[i].addEventListener("click", (e) => {
+      console.log(filtres[i].innerHTML);
+    });
+  }
 }
 test();
 // }
