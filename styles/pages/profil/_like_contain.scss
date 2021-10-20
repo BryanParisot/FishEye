@@ -1,0 +1,33 @@
+.container_end{
+width: 90vw;
+display: flex;
+justify-content: flex-end;
+
+.container_like_tarif{
+        width: 376px;
+        height: 89px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 24px;
+        font-weight: 500;
+        font-family: $dm;
+        border-radius: 5px;
+        background: rgba(219, 136, 118, 1);
+        color: black;
+
+        .contain_like{
+            width: 30%;
+            display: flex;
+            align-items: center;
+            
+
+            #like_total{
+                margin-right: 7px;
+            }
+            i{
+                font-size: 23px;
+            }
+        }
+    }
+}
