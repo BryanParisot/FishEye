@@ -1,0 +1,28 @@
+.container_picture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+
+  .container_card {
+    .card_picture {
+      margin-top: 71px;
+      height: 300px;
+      width: 350px;
+      object-fit: cover;
+
+    }
+    .container_card_info {
+      display: flex;
+      justify-content: space-between;
+
+      .like_card {
+        display: flex;
+
+        .like {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
