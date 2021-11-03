@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  color: rgba(144, 28, 28, 1);
 
   .container_card {
     .card_picture {
@@ -21,6 +22,9 @@
 
         .like {
           margin-right: 10px;
+        }
+        i{
+          cursor: pointer;
         }
       }
     }
