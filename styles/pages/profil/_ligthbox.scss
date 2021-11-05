@@ -1,0 +1,48 @@
+.ligthbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100000;
+  overflow: auto;
+}
+.ligthbox__next,
+.ligthbox__prev {
+  position: fixed;
+  top: 50%;
+  margin-top: -14px;
+  z-index: 100001;
+  right: 0;
+}
+.ligthbox__prev {
+  right: auto;
+  left: 0;
+}
+
+.ligthbox__close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+.ligthbox__contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  min-height: 100vh;
+}
+.ligthbox__contain img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ligthbox.fadeOut{
+  opacity: 0;
+}
+
+@keyframes animationLightBox {
+  from {}
+}

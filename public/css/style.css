@@ -19,6 +19,11 @@ a {
   color: black;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -129,12 +134,13 @@ header nav a {
 #profil_header #img_header {
   width: 200px;
   height: 50px;
+  object-fit: cover;
 }
 
 .container_profil {
   display: flex;
   flex-direction: row;
-  width: 1240px;
+  width: 100%;
   height: 313px;
   background: #fafafa;
   margin: 50px auto 0px;
@@ -147,6 +153,7 @@ header nav a {
   width: 100%;
   height: 100%;
   margin-left: 50px;
+  background: #fafafa;
 }
 .container_profil .container_description_profil .container_description_flex {
   display: flex;
@@ -192,9 +199,11 @@ header nav a {
 .container_profil ul li {
   border: 0.5px solid #c4c4c4;
   border-radius: 12px;
-  padding: 3px;
-  margin-left: 3px;
-  color: #8f3e3e;
+  padding: 3px 8px;
+  margin-right: 6px;
+  color: #901c1c;
+  font-weight: 600;
+  font-size: 18px;
 }
 .container_profil .container_btn {
   height: 100%;
@@ -217,6 +226,288 @@ header nav a {
   background-color: #901c1c;
   margin-top: 63px;
   margin-left: 120px;
+}
+
+.list_tri .list_tri_btn .btn_tri {
+  width: 182px;
+  height: 30px;
+  padding: 4px;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #DB8876;
+  background: #901C1C;
+  color: white;
+  position: relative;
+  height: auto;
+  padding: 20px 0px;
+}
+.list_tri .list_tri_btn ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.list_tri .list_tri_btn ul li {
+  font-size: 16px;
+  border-bottom: 1px solid white;
+  width: 95%;
+  text-align: center;
+  margin-bottom: 13px;
+  padding-bottom: 10px;
+}
+
+.container_picture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  color: #901c1c;
+}
+.container_picture .container_card .card_picture {
+  margin-top: 71px;
+  height: 300px;
+  width: 350px;
+  object-fit: cover;
+}
+.container_picture .container_card .container_card_info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  margin-top: 10px;
+}
+.container_picture .container_card .container_card_info .name {
+  font-size: 22px;
+}
+.container_picture .container_card .container_card_info .like_card {
+  display: flex;
+}
+.container_picture .container_card .container_card_info .like_card .like {
+  margin-right: 10px;
+  font-size: 22px;
+}
+.container_picture .container_card .container_card_info .like_card i {
+  cursor: pointer;
+}
+
+#formContact {
+  display: none;
+}
+
+.bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  background: white;
+}
+.bg .formulaire {
+  display: flex;
+  flex-direction: column;
+  height: 730px;
+  width: 669px;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 5px;
+  background-color: #db8876;
+  margin: auto;
+  margin-top: 31px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  padding: 35px;
+  line-height: 50px;
+}
+.bg .formulaire .header_formulaire {
+  display: flex;
+  justify-content: space-between;
+}
+.bg .formulaire .header_formulaire h2 {
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+.bg .formulaire .header_formulaire #close {
+  cursor: pointer;
+  font-size: 40px;
+  color: white;
+}
+.bg .formulaire .header_formulaire #namePh {
+  font-size: 52px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.bg .formulaire input {
+  height: 68px;
+  border: none;
+  border-radius: 5px;
+}
+.bg .formulaire #message {
+  height: 170px;
+}
+.bg .formulaire button {
+  background: #901c1c;
+  width: 170px;
+  height: 89px;
+  margin-top: 26px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+}
+
+#error_message {
+  color: black;
+  padding: 10px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.ligthbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100000;
+  overflow: auto;
+}
+
+.ligthbox__next,
+.ligthbox__prev {
+  position: fixed;
+  top: 50%;
+  margin-top: -14px;
+  z-index: 100001;
+  right: 0;
+}
+
+.ligthbox__prev {
+  right: auto;
+  left: 0;
+}
+
+.ligthbox__close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.ligthbox__contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  min-height: 100vh;
+}
+
+.ligthbox__contain img {
+  max-width: 100%;
+  height: auto;
+}
+
+.ligthbox.fadeOut {
+  opacity: 0;
+}
+
+@keyframes animationLightBox {}
+.container_tri_picture {
+  display: flex;
+  margin-top: 20px;
+}
+.container_tri_picture h2 {
+  margin-right: 24px;
+}
+.container_tri_picture button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 182px;
+  height: 30px;
+  padding: 4px;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #DB8876;
+  width: 170px;
+  height: 56px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background: #901c1c;
+  color: white;
+  padding: 0 15px;
+}
+.container_tri_picture ul {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  font-family: "DM Sans", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  width: 170px;
+  height: 170px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #901c1c;
+  color: white;
+  padding: 0 10px;
+  top: 490px;
+}
+.container_tri_picture ul li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100%;
+  border-bottom: 1px solid white;
+  margin: auto;
+  width: 90%;
+}
+.container_tri_picture ul li:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+}
+.container_tri_picture ul li:nth-child(3) {
+  border-bottom: none;
+}
+
+.container_end {
+  width: 90vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.container_end .container_like_tarif {
+  width: 376px;
+  height: 89px;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  border-radius: 5px;
+  background: #db8876;
+  color: black;
+}
+.container_end .container_like_tarif .contain_like {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.container_end .container_like_tarif .contain_like #like_total {
+  margin-right: 7px;
+}
+.container_end .container_like_tarif .contain_like i {
+  font-size: 23px;
 }
 
 /*# sourceMappingURL=style.css.map */

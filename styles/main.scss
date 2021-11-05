@@ -1,6 +1,12 @@
 @import "./settings";
-@import "./components/header.scss";
-@import "./components/contentHome.scss";
+@import "./pages/home/header";
+@import "./pages/home/contentHome";
 @import "./components/card.scss";
 @import "./pages/profil/header.scss";
 @import "./pages/profil/profil.scss";
+@import "./components/list";
+@import "./pages/profil/listPicture";
+@import "./pages/profil/formulaire";
+@import "./pages/profil/ligthbox.scss";
+@import "./pages/profil/filterBtn.scss";
+@import "./pages/profil/like_contain.scss";

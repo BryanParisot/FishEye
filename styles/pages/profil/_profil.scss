@@ -1,7 +1,7 @@
 .container_profil {
   display: flex;
   flex-direction: row;
-  width: 1240px;
+  width: 100%;
   height: 313px;
   background: #fafafa;
   margin: 50px auto 0px;
@@ -14,20 +14,20 @@
     width: 100%;
     height: 100%;
     margin-left: 50px;
+    background: rgba(250, 250, 250, 1);
 
-    .container_description_flex{
+    .container_description_flex {
       display: flex;
       height: 100%;
       width: 70%;
 
-      .container_for_width{
+      .container_for_width {
         display: flex;
         flex-direction: column;
         align-content: center;
         justify-content: center;
       }
     }
-
 
     .name_profil {
       font-size: 64px;
@@ -61,15 +61,17 @@
     flex-direction: row;
 
     li {
-        border: 0.5px solid #c4c4c4;
-        border-radius: 12px;
-        padding: 3px;
-        margin-left: 3px;
-        color: #8f3e3e;
+      border: 0.5px solid #c4c4c4;
+      border-radius: 12px;
+      padding: 3px 8px;
+      margin-right: 6px;
+      color: rgba(144, 28, 28, 1);
+      font-weight: 600;
+      font-size: 18px;
     }
   }
   .container_btn {
-      height: 100%;
+    height: 100%;
     button {
       @include btn;
       cursor: pointer;
