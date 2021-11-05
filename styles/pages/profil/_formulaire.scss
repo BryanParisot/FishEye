@@ -63,3 +63,8 @@
     }
   }
 }
+   #error_message{
+    @include errorForm;
+    display: none;
+    
+   }

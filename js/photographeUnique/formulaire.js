@@ -1,4 +1,7 @@
 export default class form {
+  constructor() {
+    this.error = document.getElementById("error_message");
+  }
   displayForm() {
     const close = document.getElementById("close");
     const form = document.getElementById("formContact");
@@ -18,6 +21,7 @@ export default class form {
     const lastName = document.getElementById("nom");
     const email = document.getElementById("email");
     const message = document.getElementById("message");
+    //error
 
     //regex
     const regexTxt = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
@@ -34,9 +38,8 @@ export default class form {
         this.validateMessage(message);
 
       if (validation) {
-        this.resultConsole(firstName,lastName,email,message)
+        this.resultConsole(firstName, lastName, email, message);
       } else {
-        console.log("Une erreur est survenue");
       }
     });
   }
@@ -57,9 +60,11 @@ export default class form {
       elt.value == "" ||
       !elt.value.match(regex)
     ) {
-      console.log("error prenom");
+      this.error.style.display = "block";
+      this.error.innerHTML = "Une erreur est survenue au niveau du prénom";
       return false;
     }
+    this.error.style.display = "none";
     console.log("gg prenom");
     return true;
   }
@@ -70,25 +75,32 @@ export default class form {
       elt.value == "" ||
       !elt.value.match(regex)
     ) {
-      console.log("error nom");
+      this.error.style.display = "block";
+      this.error.innerHTML = "Une erreur est survenue au niveau du nom";
       return false;
     }
+    this.error.style.display = "none";
     console.log("gg nom");
     return true;
   }
   validateEmail(elt, regex) {
     if (!elt.value.match(regex) || elt.value == "") {
-      console.log("error email");
+      this.error.style.display = "block";
+      this.error.innerHTML =
+        "Une erreur est survenue au niveau de l'adresse email";
       return false;
     }
+    this.error.style.display = "none";
     console.log("gg email");
     return true;
   }
   validateMessage(elt) {
     if (elt.value.trim() < 2 || elt.value == "") {
-      console.log("error message");
+      this.error.style.display = "block";
+      this.error.innerHTML = "Une erreur est survenue au niveau du text";
       return false;
     }
+    this.error.style.display = "none";
     console.log("gg message");
     return true;
   }
