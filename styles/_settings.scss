@@ -17,6 +17,12 @@ $colorSecondary: #901c1c;
 //fonts
 $dm: "DM Sans", sans-serif;
 
+@mixin errorForm {
+  color: black;
+  padding: 10px;
+  font-size: .90rem;
+}
+
 //mixins
 @mixin verticalCenter {
   display: flex;
@@ -46,4 +52,9 @@ a {
   cursor: pointer;
   text-decoration: none;
   color: black;
+}
+
+button{
+  cursor: pointer;
+  border: none;
 }
