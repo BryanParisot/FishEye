@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="./public/css/style.css" />
     <title>Fish eye</title>
   </head>
@@ -16,9 +22,77 @@
           alt="Title FishEye HomePage"
       /></a>
     </header>
-    <div id="aaa" class="container_profil">
-    </div>
+    <main style="padding: 0px 70px">
+      <!-- Endroit ou se trouve les information du profil nom prenom ville.... -->
+      <div id="aaa" class="container_profil"></div>
 
+      <!-- tri pour les photos -->
+      <div class="container_tri_picture">
+        <h2>Trie par :</h2>
+        <div class="tri_picture">
+          <button id="btn_tri" class="btn_tri">
+            Popularité
+            <i class="fas fa-chevron-down chevron__down" aria-hidden="true"></i>
+          </button>
+          <ul id="contain_tri">
+            <li class="tri">
+              Popularité
+              <i class="fas fa-chevron-up chevron__up" aria-hidden="true"></i>
+            </li>
+            <li class="tri">Date</li>
+            <li class="tri">Titre</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Liste des photo des photographes -->
+      <div id="contain_picture" class="container_picture"></div>
+
+      <!-- Formulaire de contact -->
+      <form id="formContact" action="photographeUnique.html" method="get">
+        <div class="bg">
+          <div class="formulaire">
+            <div class="header_formulaire">
+              <div class="flex">
+                <h2>Contactez-moi</h2>
+                <h3 id="namePh"></h3>
+              </div>
+              <span aria-hidden="true" id="close">X</span>
+            </div>
+
+            <label for="prenom">Prénom</label>
+            <input type="text" name="prenom" id="prenom" />
+
+            <label for="nom">Nom</label>
+            <input type="text" name="nom" id="nom" />
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" />
+
+            <label for="message">Votre message</label>
+            <input type="text" name="message" id="message" />
+            <span id="error_message"></span>
+
+            <button aria-label="Envoyer les informations" type="submit">Envoyer</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Numbeur like and tarifs -->
+      <div id="contain_tarifs_like" class="container_end">
+        <div class="container_like_tarif">
+          <div class="contain_like">
+            <p id="like_total"></p>
+            <i class="fas fa-heart"></i>
+          </div>
+          <p id="tarif"></p>
+        </div>
+      </div>
+    </main>
+    <script src="./js/photographeUnique/filterBtn.js"></script>
     <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/photographeUnique/listPhotos.js"></script>
+    <script type="module" src="./js/photographeUnique/formulaire.js"></script>
+    <script type="module" src="./js/photographeUnique/ligthbox.js"></script>
   </body>
-</html>
+  </html>

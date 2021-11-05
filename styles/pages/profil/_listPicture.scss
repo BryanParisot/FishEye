@@ -11,19 +11,24 @@
       height: 300px;
       width: 350px;
       object-fit: cover;
-
     }
     .container_card_info {
       display: flex;
       justify-content: space-between;
+      font-size: 22px;
+      margin-top: 10px;
 
+      .name {
+        font-size: 22px;
+      }
       .like_card {
         display: flex;
 
         .like {
           margin-right: 10px;
+          font-size: 22px;
         }
-        i{
+        i {
           cursor: pointer;
         }
       }
