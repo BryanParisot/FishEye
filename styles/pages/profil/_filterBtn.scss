@@ -1,0 +1,63 @@
+.container_tri_picture{
+    display: flex;
+    margin-top: 20px;
+
+    h2{
+        margin-right: 24px;
+    }
+
+    button{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        @include btn;
+        width: 170px;
+        height: 56px;
+        font-family: $dm;
+        font-size: 18px;
+        font-weight: bold;
+        background: rgba(144, 28, 28, 1);
+        color: white;
+        padding: 0 15px;
+    }
+
+
+    ul{
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        font-family: $dm;
+        font-size: 18px;
+        font-weight: bold;
+        width: 170px;
+        height: 170px;
+        border-radius: 5px;
+        cursor: pointer;
+        background: rgba(144, 28, 28, 1);
+        color: white;
+        padding: 0 10px;
+        top: 490px;
+
+        li{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: center;
+            height: 100%;
+            border-bottom: 1px solid white;
+            margin: auto;
+            width: 90%;
+
+            &:nth-child(1){
+                display: flex;
+                justify-content: space-between;
+            }
+            &:nth-child(3){
+                border-bottom: none;
+            }
+
+        }
+    }
+}

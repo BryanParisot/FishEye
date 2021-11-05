@@ -5,18 +5,29 @@ export default class listPhotos {
     this.totalLike = 0;
   }
 
-  displayPicture() {
+  displayPicture(tri = null) {
     new dataApi().findData().then((response) => {
-      response.media.map((media) => {
+      let data = response.media;
+      if (tri === 2) {
+        data = data.sort((a, b) => a.title >  b.title ? 1 : -1 );
+        
+      }else if (tri === 1){
+        data = data.sort((a, b ) => new Date(a.date).valueOf() - new Date(b.date).valueOf())
+      }else if(tri === 0){
+        data = data.sort((a, b) => a.likes - b.likes)
+      }
+      const divContainPicture = document.getElementById("contain_picture")
+      divContainPicture.innerHTML = ''
+
+      data.map((media) => {
         let id = window.location.search.split("id=")[1];
 
         if (id != media.photographerId) {
           return false;
         }
         this.totalLike += media.likes;
-
+        //
         const createDivPictures = document.createElement("div");
-        const divContainPicture = document.getElementById("contain_picture");
         createDivPictures.className = "container_card";
         divContainPicture.appendChild(createDivPictures);
 
@@ -24,6 +35,10 @@ export default class listPhotos {
         //lien de l'image
         const lien = document.createElement("a");
         lien.href = `${media.image}`;
+
+        //lien de vdo
+        const lien_vdo = document.createElement("a");
+        lien_vdo.href = `${media.video}`;
 
         //img
         const img_photographe = document.createElement("img");
@@ -35,14 +50,15 @@ export default class listPhotos {
         container_card_info.className = "container_card_info";
 
         //vdo
-        const vdo_photographe = document.createElement('video');
-        vdo_photographe.setAttribute("controls", "controls")
-        vdo_photographe.setAttribute('src', media.video);
-        vdo_photographe.setAttribute('role', 'button');
-        vdo_photographe.className = 'card_picture';
+        const vdo_photographe = document.createElement("video");
+        vdo_photographe.setAttribute("controls", "controls");
+        vdo_photographe.setAttribute("src", media.video);
+        vdo_photographe.setAttribute("role", "button");
+        vdo_photographe.setAttribute("title", media.title);
+        vdo_photographe.className = "card_picture";
 
         //name
-        const name = document.createElement("p");
+        const name = document.createElement("h2");
         name.className = "name";
         name.innerHTML = `${media.title}`;
 
@@ -51,9 +67,10 @@ export default class listPhotos {
         container_like.className = "like_card";
 
         //number like
-        const like = document.createElement("p");
+        const like = document.createElement("h3");
         like.className = "like";
         like.innerHTML = `${media.likes}`;
+        like.ariaLabel = "Nombre de j'aime sur photo";
         like.id = "numberLikes-" + media.id;
 
         const heart = document.createElement("i");
@@ -63,13 +80,21 @@ export default class listPhotos {
         heart.addEventListener("click", this.addLikes);
 
         //ajout des element dans le dom
+        let formatImg = img_photographe.src.split(".").pop();
         createDivPictures.appendChild(lien);
-        let formatImg = img_photographe.src.split(".").pop()
-        console.log(formatImg);
-        if (formatImg == 'jpg') {
+
+        if (formatImg == "jpg") {
           lien.appendChild(img_photographe);
-        }else{
-         return  lien.appendChild(vdo_photographe);
+        } else {
+          return (
+            createDivPictures.appendChild(lien_vdo),
+            lien_vdo.appendChild(vdo_photographe),
+            createDivPictures.appendChild(container_card_info),
+            container_card_info.appendChild(name),
+            container_card_info.appendChild(container_like),
+            container_like.appendChild(like),
+            container_like.appendChild(heart)
+          );
         }
         createDivPictures.appendChild(container_card_info);
         container_card_info.appendChild(name);
