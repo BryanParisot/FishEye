@@ -8,6 +8,10 @@ body {
   width: 100vw;
 }
 
+.main_photographe {
+  padding: 0px 70px;
+}
+
 li {
   list-style: none;
 }
@@ -24,33 +28,83 @@ button {
   border: none;
 }
 
+/* HEADER */
+h1 {
+  color: #901c1c;
+  font-family: "DM Sans", sans-serif;
+  font-size: 36px;
+  margin-right: 100px;
+}
+
 header {
-  display: flex;
   align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
-  padding: 45px 117px 0px;
+  margin-top: 2rem;
+  overflow: hidden;
 }
 header img {
   width: 200px;
   height: 50px;
+  margin-left: 100px;
 }
-header h1 {
-  font-weight: 400;
-  font-family: DM Sans;
-}
-header nav {
-  width: 553px;
+header nav ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  left: 0;
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  position: absolute;
+  right: 0;
   text-align: center;
+  top: 50px;
 }
-header nav a {
+header nav ul li {
   font-size: 0.75rem;
   color: #901c1c;
   border-radius: 40px;
-  border: 0.5px solid #C4C4C4;
+  border: 0.5px solid #c4c4c4;
   padding: 5px;
   margin-left: 4px;
 }
 
+@media screen and (max-width: 1170px) {
+  h1 {
+    font-size: 1rem;
+    margin-right: 0px;
+  }
+
+  header {
+    margin-top: 25px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-bottom: 130px;
+  }
+  header img {
+    width: 100px;
+    height: 25px;
+    margin-left: 0px;
+  }
+  header a {
+    margin-bottom: 0;
+  }
+  header nav ul {
+    top: 90px !important;
+    width: 17rem;
+  }
+  header nav ul li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    border-radius: 11px;
+    border: 0.5px solid #c4c4c4;
+    margin-left: 5px;
+    padding: 3px 6px;
+  }
+}
 #btn_home {
   width: 182px;
   height: 30px;
@@ -137,6 +191,17 @@ header nav a {
   object-fit: cover;
 }
 
+@media screen and (max-width: 1170px) {
+  #profil_header {
+    margin-bottom: 0px !important;
+    margin-left: -10px !important;
+  }
+  #profil_header #img_header {
+    width: 170px;
+    height: 40px;
+    object-fit: cover;
+  }
+}
 .container_profil {
   display: flex;
   flex-direction: row;
@@ -170,6 +235,7 @@ header nav a {
   font-size: 64px;
   color: #d3573c;
   margin-bottom: 10px;
+  font-family: "DM Sans", sans-serif;
 }
 .container_profil .container_description_profil .ville_profil {
   font-size: 24px;
@@ -228,6 +294,55 @@ header nav a {
   margin-left: 120px;
 }
 
+@media screen and (max-width: 1170px) {
+  .main_photographe {
+    padding: 0px 10px;
+  }
+
+  .container_profil {
+    background-color: white;
+    height: 100%;
+  }
+  .container_profil .container_description_profil {
+    background-color: white;
+    margin: 0px !important;
+    margin-bottom: 52px !important;
+  }
+  .container_profil .container_description_profil .container_img {
+    margin-bottom: 24px;
+  }
+  .container_profil .container_description_profil .container_img img {
+    height: 110px;
+    width: 110px;
+  }
+  .container_profil .name_profil {
+    font-size: 26px !important;
+  }
+  .container_profil .ville_profil {
+    font-size: 12px;
+  }
+  .container_profil .txt_profil {
+    font-size: 12px;
+  }
+  .container_profil .container_btn {
+    display: flex;
+    width: 0px;
+    height: 0px;
+  }
+  .container_profil .container_btn button {
+    z-index: 100;
+    width: 170px;
+    height: 35px;
+    font-size: 18px;
+    position: fixed;
+    top: 590px;
+    right: 100px;
+    left: 50;
+  }
+  .container_profil ul li {
+    font-size: 11px;
+  }
+}
 .list_tri .list_tri_btn .btn_tri {
   width: 182px;
   height: 30px;
@@ -292,6 +407,27 @@ header nav a {
   cursor: pointer;
 }
 
+@media screen and (max-width: 1170px) {
+  .container_card {
+    margin-top: 10px;
+  }
+  .container_card .card_picture {
+    height: 190px !important;
+    border-radius: 5px;
+  }
+  .container_card .name {
+    font-size: 14px !important;
+  }
+  .container_card .like {
+    font-size: 14px !important;
+  }
+  .container_card i {
+    font-size: 14px !important;
+  }
+  .container_card .card_picture {
+    margin-top: 10px !important;
+  }
+}
 #formContact {
   display: none;
 }
@@ -478,6 +614,11 @@ header nav a {
   border-bottom: none;
 }
 
+@media screen and (max-width: 1170px) {
+  .container_tri_picture {
+    display: none;
+  }
+}
 .container_end {
   width: 90vw;
   display: flex;

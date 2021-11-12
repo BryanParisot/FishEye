@@ -35,3 +35,28 @@
     }
   }
 }
+@media screen and (max-width: 1170px) {
+  .container_card {
+    margin-top: 10px;
+
+    .card_picture {
+      height: 190px !important;
+      border-radius: 5px;
+    }
+
+
+    .name {
+      font-size: 14px !important;
+    }
+    .like {
+      font-size: 14px !important;
+    }
+    i {
+      font-size: 14px !important;
+    }
+
+    .card_picture {
+      margin-top: 10px !important;
+    }
+  }
+}

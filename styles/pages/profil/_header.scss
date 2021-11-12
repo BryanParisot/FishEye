@@ -8,3 +8,17 @@
 
     }
 }
+@media screen and (max-width: 1170px) {
+    #profil_header{
+        margin-bottom: 0px !important;
+        margin-left: -10px !important;
+        #img_header{
+            width: 170px;
+            height: 40px;
+            object-fit: cover;
+    
+        }
+    
+    }
+}
+

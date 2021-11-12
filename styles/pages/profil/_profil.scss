@@ -33,6 +33,8 @@
       font-size: 64px;
       color: $colorPrimary;
       margin-bottom: 10px;
+      font-family: $dm;
+
     }
     .ville_profil {
       font-size: 24px;
@@ -81,6 +83,62 @@
       background-color: #901c1c;
       margin-top: 63px;
       margin-left: 120px;
+    }
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .main_photographe{
+    padding: 0px 10px;
+  }
+  
+  .container_profil {
+    background-color: white;
+    height: 100%;
+
+    .container_description_profil {
+      background-color: white;
+      margin: 0px !important;
+      margin-bottom: 52px !important;
+
+      .container_img{
+        margin-bottom: 24px;
+        img{
+          height: 110px;
+          width: 110px;
+    
+        }
+      }
+    }
+    .name_profil {
+      font-size: 26px !important;
+    }
+    .ville_profil {
+      font-size: 12px;
+    }
+    .txt_profil {
+      font-size: 12px;
+    }
+    .container_btn {
+      display: flex;
+      width: 0px;
+      height: 0px;
+
+      button{
+        z-index: 100;
+        width: 170px;
+        height: 35px;
+        font-size: 18px;
+        position: fixed;
+        top: 590px;
+        right: 100px;
+        left: 50;
+      }
+    }
+    ul{
+      li{
+        font-size: 11px;
+      }
     }
   }
 }
