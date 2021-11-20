@@ -3,28 +3,47 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  height: auto;
+  background-color: white;
   z-index: 100000;
   overflow: auto;
 }
+
+.lightbox__loader {
+  width: 38px;
+  height: 38px;
+  opacity: 0.5;
+  z-index: 10;
+  background: url("../../../images/svg/loader.svg") center center no-repeat;
+}
 .ligthbox__next,
 .ligthbox__prev {
+  color: #901c1c;
+  font-size: 50px;
   position: fixed;
   top: 50%;
   margin-top: -14px;
   z-index: 100001;
   right: 0;
+  background: white;
 }
 .ligthbox__prev {
   right: auto;
   left: 0;
+  left: 130px;
+}
+
+.ligthbox__next {
+  right: 130px;
 }
 
 .ligthbox__close {
+  color: #901c1c;
+  background: white;
+  font-size: 50px;
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 65px;
+  right: 130px;
 }
 .ligthbox__contain {
   display: flex;
@@ -35,14 +54,43 @@
   min-height: 100vh;
 }
 .ligthbox__contain img {
-  max-width: 100%;
-  height: auto;
+  width: 1050px;
+  height: 650px;
+  object-fit: cover;
 }
 
-.ligthbox.fadeOut{
+.ligthbox.fadeOut {
   opacity: 0;
 }
 
 @keyframes animationLightBox {
-  from {}
+  from {
+  }
+}
+
+@media screen and (max-width: 1170px) {
+  .ligthbox__contain img {
+    width: 280px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .ligthbox__next,
+  .ligthbox__prev {
+    font-size: 25px;
+  }
+  
+  .ligthbox__prev {
+    left: 15px;
+  }
+  .ligthbox__next {
+    right: 15px;
+  }
+  .ligthbox__close {
+    font-size: 25px;
+    top: 280px;
+    right: 15px;
+  }
+  
 }
