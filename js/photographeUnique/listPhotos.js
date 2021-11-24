@@ -6,11 +6,10 @@ export default class listPhotos {
   }
 
   displayPicture(tri = null) {
-    new dataApi().findData().then((response) => {
+   return new dataApi().findData().then((response) => {
       let data = response.media;
       if (tri === 2) {
         data = data.sort((a, b) => a.title >  b.title ? 1 : -1 );
-        
       }else if (tri === 1){
         data = data.sort((a, b ) => new Date(a.date).valueOf() - new Date(b.date).valueOf())
       }else if(tri === 0){
@@ -44,8 +43,7 @@ export default class listPhotos {
         const img_photographe = document.createElement("img");
         img_photographe.className = "card_picture";
         img_photographe.src = `${media.image}`;
-        img_photographe.alt = `${media.title}`;
-
+        img_photographe.setAttribute("alt", media.title);
         const container_card_info = document.createElement("div");
         container_card_info.className = "container_card_info";
 

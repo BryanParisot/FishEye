@@ -1,5 +1,4 @@
 import dataApi from "../dataUser/dataApi.js";
-import scroll from "./scroll.js";
 
 export default class displayHome {
   constructor() {
@@ -11,7 +10,7 @@ export default class displayHome {
     <a href="photographeUnique.html?id=${photographer.id}" title=${
       photographer.name
     }>
-      <img src="${photographer.portrait}" alt="" />
+      <img src="${photographer.portrait}" alt="${photographer.name}" />
       <h2 class="name">${photographer.name}</h2>
     </a>
     <p class="city">${photographer.city}, ${photographer.country}</p>
@@ -38,7 +37,7 @@ export default class displayHome {
     console.log(this.tags);
   }
   displayPhotographers() {
-    new dataApi().findData().then((response) => {
+    return new dataApi().findData().then((response) => {
       this.photographers = response.photographer;
       response.photographer.map((photographer) => {
         const templatePhotographer = this.getPhotagrapherTemplate(photographer);
@@ -69,5 +68,3 @@ export default class displayHome {
       });
   }
 }
-
-new scroll().scrollDisplayBtn();

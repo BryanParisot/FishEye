@@ -1,5 +1,4 @@
-export default class scroll {
-  scrollDisplayBtn() {
+ function scrollDisplayBtn() {
     window.addEventListener("scroll", () => {
       let btn = document.getElementById("btn_home");
       let y = window.scrollY;
@@ -10,4 +9,4 @@ export default class scroll {
       }
     });
   }
-}
+scrollDisplayBtn()
