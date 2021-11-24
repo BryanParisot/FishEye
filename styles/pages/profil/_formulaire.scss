@@ -20,7 +20,7 @@
     margin-top: 31px;
     font-style: normal;
     font-weight: normal;
-    font-size: 26px;
+    font-size: 24px;
     padding: 35px;
     line-height: 50px;
 
@@ -29,7 +29,7 @@
       justify-content: space-between;
 
       h2 {
-        font-size: 52px;
+        font-size: 42px;
         margin-bottom: 20px;
       }
       #close {
@@ -38,33 +38,70 @@
         color: white;
       }
       #namePh {
-        font-size: 52px;
+        font-size: 42px;
         margin-top: 10px;
         margin-bottom: 20px;
       }
     }
 
     input {
-      height: 68px;
+      height: 110px;
       border: none;
       border-radius: 5px;
     }
     #message {
-      height: 170px;
+      height: 200px;
     }
     button {
       background: rgba(144, 28, 28, 1);
       width: 170px;
-      height: 89px;
-      margin-top: 26px;
+      height: 69px;
+      margin-top: 17px;
       border: none;
       border-radius: 5px;
       color: white;
     }
   }
 }
-   #error_message{
-    @include errorForm;
-    display: none;
-    
-   }
+#error_message {
+  @include errorForm;
+  display: none;
+  line-height: initial;
+  color: rgb(119, 3, 3);
+}
+
+@media screen and (max-width: 1170px) {
+  .formulaire {
+    width: 100% !important;
+    height: 100% !important;
+    margin-top: 0px !important;
+    padding: 35px 20px 35px 20px !important;
+
+    input {
+      height: 70px !important;
+    }
+    #message {
+      height: 200px !important;
+    }
+
+    .position_btn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    h2 {
+      font-size: 36px !important;
+    }
+    #close {
+      font-size: 34px !important;
+    }
+    #namePh {
+      font-size: 36px !important;
+    }
+    button {
+      height: 35px !important;
+      width: 175px !important;
+    }
+  }
+}

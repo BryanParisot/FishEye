@@ -87,14 +87,11 @@
   }
 }
 
-@media screen and (max-width: 1170px) {
-  .main_photographe{
-    padding: 0px 10px;
-  }
-  
+@media screen and (max-width: 1170px) {  
   .container_profil {
     background-color: white;
     height: 100%;
+    padding: 0px 10px 0px 10px;
 
     .container_description_profil {
       background-color: white;
@@ -125,7 +122,6 @@
       height: 0px;
 
       button{
-        z-index: 100;
         width: 170px;
         height: 35px;
         font-size: 18px;

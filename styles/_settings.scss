@@ -3,8 +3,8 @@
   padding: 0px;
   margin: 0px;
 }
-body{
-    width: 100vw;
+body {
+  width: 100vw;
 }
 
 //variables
@@ -20,7 +20,7 @@ $dm: "DM Sans", sans-serif;
 @mixin errorForm {
   color: black;
   padding: 10px;
-  font-size: .90rem;
+  font-size: 0.9rem;
 }
 
 //mixins
@@ -30,20 +30,20 @@ $dm: "DM Sans", sans-serif;
   align-items: center;
 }
 
-@mixin btn{
-    width: 182px;
-    height: 30px;
-    padding: 4px;
-    text-align: center;
-    font-family: $dm;
-    border: none;
-    border-radius: 3px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #DB8876;
+@mixin btn {
+  width: 182px;
+  height: 30px;
+  padding: 4px;
+  text-align: center;
+  font-family: $dm;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #db8876;
 }
 
-.main_photographe{
+.main_photographe {
   padding: 0px 70px;
 }
 
@@ -58,7 +58,13 @@ a {
   color: black;
 }
 
-button{
+button {
   cursor: pointer;
   border: none;
+}
+
+@media screen and (max-width: 1170px) {
+  .main_photographe {
+    padding: 0px 0px;
+  }
 }

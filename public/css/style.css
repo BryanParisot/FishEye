@@ -28,6 +28,11 @@ button {
   border: none;
 }
 
+@media screen and (max-width: 1170px) {
+  .main_photographe {
+    padding: 0px 0px;
+  }
+}
 /* HEADER */
 h1 {
   color: #901c1c;
@@ -115,7 +120,7 @@ header nav ul li {
   border-radius: 3px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #DB8876;
+  background-color: #db8876;
   display: none;
   position: sticky;
   top: 0;
@@ -284,7 +289,7 @@ header nav ul li {
   border-radius: 3px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #DB8876;
+  background-color: #db8876;
   cursor: pointer;
   color: white;
   width: 170px;
@@ -295,13 +300,10 @@ header nav ul li {
 }
 
 @media screen and (max-width: 1170px) {
-  .main_photographe {
-    padding: 0px 10px;
-  }
-
   .container_profil {
     background-color: white;
     height: 100%;
+    padding: 0px 10px 0px 10px;
   }
   .container_profil .container_description_profil {
     background-color: white;
@@ -330,7 +332,6 @@ header nav ul li {
     height: 0px;
   }
   .container_profil .container_btn button {
-    z-index: 100;
     width: 170px;
     height: 35px;
     font-size: 18px;
@@ -353,7 +354,7 @@ header nav ul li {
   border-radius: 3px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #DB8876;
+  background-color: #db8876;
   background: #901C1C;
   color: white;
   position: relative;
@@ -408,23 +409,26 @@ header nav ul li {
 }
 
 @media screen and (max-width: 1170px) {
-  .container_card {
+  .container_picture {
+    padding: 0px 10px 0px 10px;
+  }
+  .container_picture .container_card {
     margin-top: 10px;
   }
-  .container_card .card_picture {
+  .container_picture .container_card .card_picture {
     height: 190px !important;
     border-radius: 5px;
   }
-  .container_card .name {
+  .container_picture .container_card .name {
     font-size: 14px !important;
   }
-  .container_card .like {
+  .container_picture .container_card .like {
     font-size: 14px !important;
   }
-  .container_card i {
+  .container_picture .container_card i {
     font-size: 14px !important;
   }
-  .container_card .card_picture {
+  .container_picture .container_card .card_picture {
     margin-top: 10px !important;
   }
 }
@@ -451,7 +455,7 @@ header nav ul li {
   margin-top: 31px;
   font-style: normal;
   font-weight: normal;
-  font-size: 26px;
+  font-size: 24px;
   padding: 35px;
   line-height: 50px;
 }
@@ -460,7 +464,7 @@ header nav ul li {
   justify-content: space-between;
 }
 .bg .formulaire .header_formulaire h2 {
-  font-size: 52px;
+  font-size: 42px;
   margin-bottom: 20px;
 }
 .bg .formulaire .header_formulaire #close {
@@ -469,23 +473,23 @@ header nav ul li {
   color: white;
 }
 .bg .formulaire .header_formulaire #namePh {
-  font-size: 52px;
+  font-size: 42px;
   margin-top: 10px;
   margin-bottom: 20px;
 }
 .bg .formulaire input {
-  height: 68px;
+  height: 110px;
   border: none;
   border-radius: 5px;
 }
 .bg .formulaire #message {
-  height: 170px;
+  height: 200px;
 }
 .bg .formulaire button {
   background: #901c1c;
   width: 170px;
-  height: 89px;
-  margin-top: 26px;
+  height: 69px;
+  margin-top: 17px;
   border: none;
   border-radius: 5px;
   color: white;
@@ -496,8 +500,42 @@ header nav ul li {
   padding: 10px;
   font-size: 0.9rem;
   display: none;
+  line-height: initial;
+  color: #770303;
 }
 
+@media screen and (max-width: 1170px) {
+  .formulaire {
+    width: 100% !important;
+    height: 100% !important;
+    margin-top: 0px !important;
+    padding: 35px 20px 35px 20px !important;
+  }
+  .formulaire input {
+    height: 70px !important;
+  }
+  .formulaire #message {
+    height: 200px !important;
+  }
+  .formulaire .position_btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .formulaire h2 {
+    font-size: 36px !important;
+  }
+  .formulaire #close {
+    font-size: 34px !important;
+  }
+  .formulaire #namePh {
+    font-size: 36px !important;
+  }
+  .formulaire button {
+    height: 35px !important;
+    width: 175px !important;
+  }
+}
 .ligthbox {
   position: fixed;
   top: 0;
@@ -616,7 +654,7 @@ header nav ul li {
   border-radius: 3px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #DB8876;
+  background-color: #db8876;
   width: 170px;
   height: 56px;
   font-family: "DM Sans", sans-serif;
