@@ -7,28 +7,26 @@
     <link rel="stylesheet" href="./public/css/style.css" />
     <title>Fish eye</title>
   </head>
-  <body>
-    <header>
-      <!-- banner -->
-      <a href="index.html">
-        <img
-          src="https://res.cloudinary.com/dlpyn3wxf/image/upload/v1614078430/logo_mig5no.png"
-          alt="Title FishEye HomePage"
-        />
-      </a>
-      <!-- navigation -->
-      <nav aria-label="photographer categories" id="navigation">
-        <a href="#" data-filter="portrait">#Portrait</a>
-        <a href="#">#Art</a>
-        <a href="#">#Fashion</a>
-        <a href="#">#Architecture</a>
-        <a href="#">#Travel</a>
-        <a href="#">#Sport</a>
-        <a href="#">#Animals</a>
-        <a href="#">#Events</a>
+  <body>    
+    <header role="banner">
+      <a href="index.html" title="HomePage"><img
+              src="https://res.cloudinary.com/dlpyn3wxf/image/upload/v1614078430/logo_mig5no.png"
+              alt="FishEye Home Page"></a>
+      <!-- NAV -->
+      <nav class="filters" aria-label="photographer categories" role="navigation">
+          <ul>
+              <a class="cat" href='#Portrait'><li data-filter="portrait">#portrait</li></a>
+              <a class="cat" href='#Art'><li data-filter="art">#art</li></a>
+              <a class="cat" href='#Fashion'><li data-filter="fashion">#fashion</li></a>
+              <a class="cat" href='#Architecture'><li data-filter="architecture">#architecture</li></a>
+              <a class="cat" href='#Travel'><li data-filter="travel">#travel</li></a>
+              <a class="cat" href='#Sport'><li data-filter="sport">#sport</li></a>
+              <a class="cat" href='#Animals'><li data-filter="animals">#animals</li></a>
+              <a class="cat" href='#Events'><li data-filter="events">#events</li></a>
+          </ul>
       </nav>
-      <h1>Nos photographes</h1>
-    </header>
+      <h1>Nos Photographes</h1>
+  </header>
     <a href="#main" id="btn_home">Passer au contenu</a>
     <!-- main content -->
     <main id="main">
@@ -36,6 +34,6 @@
     </main>
     <script type="module" src="./js/dataUser/dataApi.js"></script>
     <script type="module" src="./js/main.js"></script>
-    <script src="./js/home/filterTag.js"></script>
+    <script type="module" src="./js/home/scroll.js"></script>
   </body>
 </html>
