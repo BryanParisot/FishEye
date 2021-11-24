@@ -1,20 +1,9 @@
-export default class form {
+export default class Form {
   constructor() {
     this.error = document.getElementById("error_message");
   }
-  displayForm() {
-    const close = document.getElementById("close");
-    const form = document.getElementById("formContact");
-    const listPhotos = document.getElementById("contain_picture");
-    console.log(close);
 
-    close.addEventListener("click", () => {
-      form.style.display = "none";
-      listPhotos.style.display = "flex";
-    });
-  }
-
-  valdation() {
+  validation() {
     //const formulaire
     const form = document.getElementById("formContact");
     const firstName = document.getElementById("prenom");
@@ -25,21 +14,35 @@ export default class form {
 
     //regex
     const regexTxt = /^[a-zA-ZÀ-ÖØ-öø-ÿ]+$/;
-    const regexEmail =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-
-      let validation =
+      let validationVar =
         this.validateFirstName(firstName, regexTxt) &&
         this.validateLastName(lastName, regexTxt) &&
         this.validateEmail(email) &&
         this.validateMessage(message);
 
-      if (validation) {
+      if (validationVar) {
+        this.error.style.display = "none";
         this.resultConsole(firstName, lastName, email, message);
-      } else {
+      }
+    });
+    this.displayForm();
+  }
+
+  displayForm() {
+    const close = document.getElementById("close");
+    const form = document.getElementById("formContact");
+    const listPhotos = document.getElementById("contain_picture");
+    close.addEventListener("click", () => {
+      form.style.display = "none";
+      listPhotos.style.display = "flex";
+    });
+    document.addEventListener("keyup", (e) => {
+      if (e.key === "Escape") {
+        form.style.display = "none";
+        listPhotos.style.display = "flex";
       }
     });
   }
@@ -105,22 +108,3 @@ export default class form {
     return true;
   }
 }
-
-// function allValidationsPassed() {
-//   return (
-//     validateFirstName() &&
-//     validateLastName() &&
-//     validateEmail() &&
-//     validateMessage()
-//   );
-// }
-
-// function validate(e) {
-//   if (allValidationsPassed()) {
-//     return true;
-//   }
-//   e.preventDefault();
-// }
-// validate();
-
-// displayForm();
