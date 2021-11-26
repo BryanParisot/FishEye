@@ -605,6 +605,15 @@ header nav ul li {
   opacity: 0;
 }
 
+.ligthbox__name {
+  position: absolute;
+  z-index: 1000000;
+  font-size: 14px;
+  top: 730px;
+  left: 200px;
+  color: red;
+}
+
 @keyframes animationLightBox {}
 @media screen and (max-width: 1170px) {
   .ligthbox__contain img {
@@ -634,9 +643,6 @@ header nav ul li {
   }
 
   .ligthbox__name {
-    position: absolute;
-    font-size: 14px;
-    z-index: 1000000;
     color: #901C1C;
     top: 532px;
     right: 565px;

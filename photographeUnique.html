@@ -24,15 +24,26 @@
     </header>
     <main class="main_photographe">
       <!-- Endroit ou se trouve les information du profil nom prenom ville.... -->
-      <div id="aaa" class="container_profil"></div>
+      <section
+        id="aaa"
+        aria-label="Profil du photographe"
+        class="container_profil"
+      ></section>
 
       <!-- tri pour les photos -->
-      <div class="container_tri_picture">
+      <div
+        role="trie the pictures"
+        class="container_tri_picture"
+        aria-hidden="true"
+      >
         <h2>Trie par :</h2>
         <div class="tri_picture">
           <button id="btn_tri" class="btn_tri">
             Popularité
-            <i class="fas fa-chevron-down chevron__down" aria-hidden="true"></i>
+            <i
+              class="fas fa-chevron-down chevron__down"
+              aria-hidden="true"
+            ></i>
           </button>
           <ul id="contain_tri">
             <li class="tri">
@@ -46,10 +57,20 @@
       </div>
 
       <!-- Liste des photo des photographes -->
-      <div id="contain_picture" class="container_picture"></div>
+      <section
+        aria-label="listes des photos"
+        id="contain_picture"
+        class="container_picture"
+      ></section>
 
       <!-- Formulaire de contact -->
-      <form id="formContact" action="photographeUnique.html" method="get">
+      <form
+        id="formContact"
+        action="photographeUnique.html"
+        method="get"
+        role="send message"
+        aria-labelledby="form contact"
+      >
         <div class="bg">
           <div class="formulaire">
             <div class="header_formulaire">
@@ -60,17 +81,39 @@
               <span aria-hidden="true" id="close">X</span>
             </div>
 
-            <label for="prenom">Prénom</label>
-            <input type="text" name="prenom" id="prenom" />
+            <label id="label_prenom" for="prenom">Prénom</label>
+            <input
+              aria-labelledby="label_prenom"
+              type="text"
+              name="prenom"
+              id="prenom"
+            />
 
-            <label for="nom">Nom</label>
-            <input type="text" name="nom" id="nom" />
+            <label id="label_nom" for="nom">Nom</label>
+            <input
+              aria-labelledby="label_nom"
+              type="text"
+              name="nom"
+              id="nom"
+            />
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <label id="label_email" for="email">Email</label>
+            <input
+              aria-labelledby="label_email"
+              type="email"
+              name="email"
+              id="email"
+            />
 
-            <label for="message">Votre message</label>
-            <input type="text" name="message" id="message" />
+            <label id="label_message" for="message">Votre message</label>
+            <textarea
+              aria-labelledby="label_message"
+              type="text"
+              name="message"
+              id="message"
+              placeholder="Votre message ..."
+            ></textarea>
+
             <span id="error_message"></span>
             <div class="position_btn">
               <button aria-label="Envoyer les informations" type="submit">
@@ -81,8 +124,13 @@
         </div>
       </form>
 
-      <!-- Numbeur like and tarifs -->
-      <div id="contain_tarifs_like" class="container_end">
+      <!-- Numbeur like and price -->
+      <div
+        id="contain_tarifs_like"
+        class="container_end"
+        aria-label="nombre de like et le prix"
+        role="for price and like"
+      >
         <div class="container_like_tarif">
           <div class="contain_like">
             <p id="like_total"></p>
@@ -94,6 +142,6 @@
     </main>
     <!-- <script src="./js/photographeUnique/filterBtn.js"></script> -->
     <!-- <script type="module" src="./js/photographeUnique/listPhotos.js"></script> -->
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/photographe.js"></script>
   </body>
 </html>
