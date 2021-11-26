@@ -34,6 +34,7 @@ export default class listPhotos {
         //lien de l'image
         const lien = document.createElement("a");
         lien.href = `${media.image}`;
+        lien.setAttribute("data-title",media.title);
 
         //lien de vdo
         const lien_vdo = document.createElement("a");
@@ -79,9 +80,9 @@ export default class listPhotos {
 
         //ajout des element dans le dom
         let formatImg = img_photographe.src.split(".").pop();
-        createDivPictures.appendChild(lien);
 
-        if (formatImg == "jpg") {
+        if (formatImg === "jpg") {
+          createDivPictures.appendChild(lien);
           lien.appendChild(img_photographe);
         } else {
           return (
@@ -112,10 +113,10 @@ export default class listPhotos {
     const heartP = document.getElementById(
       `numberLikes-${e.currentTarget.getAttribute("data-like-id")}`
     );
-    console.log(heartP);
+    //console.log(heartP);
 
     heartP.innerHTML = parseInt(heartP.textContent) + 1;
 
-    console.log(e.currentTarget);
+    //console.log(e.currentTarget);
   };
 }

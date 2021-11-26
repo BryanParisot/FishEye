@@ -1,14 +1,14 @@
 import dataApi from "../dataUser/dataApi.js";
 import listPhotos from "./listPhotos.js";
-import form from "./formulaire.js";
+import dropDown from "./dropDown.js";
+import Lightbox from "./ligthbox.js";
 
 export default class profil {
   displayProfil() {
-    new dataApi().findData().then((response) => {
+    return new dataApi().findData().then((response) => {
       response.photographer.map((photographer) => {
         let id = window.location.search.split("id=")[1];
         if (id != photographer.id) {
-          console.log("eerrr");
           return false;
         }
         const createProfilUnique = document.createElement("div");
@@ -23,7 +23,6 @@ export default class profil {
         //div secondaire
         const containterDescription = document.createElement("div");
         containterDescription.className = "container_description_flex";
-        console.log(containterDescription);
 
         //containerForWidth
         const containerForWidth = document.createElement("div");
@@ -34,7 +33,7 @@ export default class profil {
         createTitle.className = "name_profil";
         createTitle.innerHTML = `${photographer.name}`;
         // <p ville
-        const createParagrapheVille = document.createElement("p");
+        const createParagrapheVille = document.createElement("h3");
         createParagrapheVille.className = "ville_profil";
         createParagrapheVille.innerHTML = `${photographer.city}, ${photographer.country}`;
 
@@ -46,11 +45,12 @@ export default class profil {
         // <ul list tag
         const createListTag = document.createElement("ul");
         createListTag.className = "filter";
+        createListTag.ariaLabel = "listes des catégorires de photos";
 
         // <li listUnique
         photographer.tags.forEach((tag) => {
           const createList = document.createElement("li");
-          createList.innerHTML = `${tag}`;
+          createList.innerHTML = `#${tag}`;
           createListTag.appendChild(createList);
         });
 
@@ -62,6 +62,7 @@ export default class profil {
         const createBtn = document.createElement("button");
         createBtn.id = "btnForm";
         const txtBtn = document.createTextNode("Contactez-moi");
+        createBtn.ariaLabel = "Vers le formulaire de contact";
         createBtn.appendChild(txtBtn);
         //display formulaire
         createBtn.addEventListener("click", () => {
@@ -91,11 +92,18 @@ export default class profil {
         divImg.appendChild(createImg);
         createProfilUnique.appendChild(containterDescription);
         createProfilUnique.appendChild(divImg);
+
+        //tarif
+        const tarifs = document.getElementById("tarif");
+        tarifs.innerHTML = `${photographer.price}€ / jours`;
       });
     });
   }
 }
 
-new listPhotos().displayPicture();
-new form().displayForm();
-new form().valdation();
+// new filterBtn().displayBtn();
+
+new listPhotos().displayPicture().then(() => {
+  new Lightbox().init();
+});
+

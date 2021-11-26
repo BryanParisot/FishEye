@@ -10,8 +10,12 @@ export default class displayHome {
     <a href="photographeUnique.html?id=${photographer.id}" title=${
       photographer.name
     }>
-      <img src="${photographer.portrait}" alt="${photographer.name}" />
-      <h2 class="name">${photographer.name}</h2>
+      <img aria-label="${photographer.name}" src="${
+      photographer.portrait
+    }" alt="${photographer.name}" />
+      <h2 aria-label="${photographer.name}" class="name">${
+      photographer.name
+    }</h2>
     </a>
     <p class="city">${photographer.city}, ${photographer.country}</p>
     <p class="tagline">${photographer.tagline}</p>
@@ -34,7 +38,6 @@ export default class displayHome {
   addTag(tag) {
     if (this.tags.includes(tag)) return;
     this.tags.push(tag);
-    console.log(this.tags);
   }
   displayPhotographers() {
     return new dataApi().findData().then((response) => {
