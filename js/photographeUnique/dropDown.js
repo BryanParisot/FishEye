@@ -15,7 +15,6 @@ export default class dropDown {
   }
 
   tri() {
-
     let sortBtn = Array.from(document.getElementsByClassName("tri"));
 
     sortBtn.forEach((btn, index) =>
@@ -36,7 +35,7 @@ export default class dropDown {
         }
       })
     );
-    this.displayBtn();
+     this.displayBtn();
   }
 }
 
