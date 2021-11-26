@@ -632,6 +632,15 @@ header nav ul li {
     top: 280px;
     right: 15px;
   }
+
+  .ligthbox__name {
+    position: absolute;
+    font-size: 14px;
+    z-index: 1000000;
+    color: #901C1C;
+    top: 532px;
+    right: 565px;
+  }
 }
 .container_tri_picture {
   display: flex;
@@ -680,6 +689,7 @@ header nav ul li {
   color: white;
   padding: 0 10px;
   top: 490px;
+  z-index: 10;
 }
 .container_tri_picture ul li {
   display: flex;
