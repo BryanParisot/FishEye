@@ -31,6 +31,7 @@ export default class Form {
     this.displayForm();
   }
 
+  //afficher le formulaire / et ne plus l'afficher 
   displayForm() {
     const close = document.getElementById("close");
     const form = document.getElementById("formContact");
@@ -47,7 +48,7 @@ export default class Form {
     });
   }
 
-  //result in console
+  //resultat dans la console
   resultConsole(firstName, lastName, email, message) {
     console.group("Résultat du formulaire de contact");
     console.log("Prénom : " + firstName.value);
@@ -86,6 +87,7 @@ export default class Form {
     console.log("gg nom");
     return true;
   }
+  
   validateEmail(elt, regex) {
     if (!elt.value.match(regex) || elt.value == "") {
       this.error.style.display = "block";
@@ -97,6 +99,7 @@ export default class Form {
     console.log("gg email");
     return true;
   }
+
   validateMessage(elt) {
     if (elt.value.trim() < 2 || elt.value == "") {
       this.error.style.display = "block";

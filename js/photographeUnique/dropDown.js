@@ -5,6 +5,7 @@ export default class dropDown {
     this.listTri = document.getElementById("contain_tri");
     this.btnTri = document.getElementById("btn_tri");
   }
+  //afficher et ne pas afficher le btn
   displayBtn() {
     this.btnTri.addEventListener("click", () => {
       this.listTri.style.display = "flex";
@@ -14,6 +15,7 @@ export default class dropDown {
     });
   }
 
+  //tri des photos / vidéos 
   tri() {
     let sortBtn = Array.from(document.getElementsByClassName("tri"));
 

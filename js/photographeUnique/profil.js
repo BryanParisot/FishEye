@@ -4,6 +4,7 @@ import dropDown from "./dropDown.js";
 import Lightbox from "./ligthbox.js";
 
 export default class profil {
+  //Afficher le profil des users
   displayProfil() {
     return new dataApi().findData().then((response) => {
       response.photographer.map((photographer) => {
@@ -101,7 +102,6 @@ export default class profil {
   }
 }
 
-// new filterBtn().displayBtn();
 
 new listPhotos().displayPicture().then(() => {
   new Lightbox().init();

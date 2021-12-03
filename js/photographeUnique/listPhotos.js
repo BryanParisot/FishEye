@@ -4,7 +4,7 @@ export default class listPhotos {
   constructor(url) {
     this.totalLike = 0;
   }
-
+  //afficher les photos des utilisateurs
   displayPicture(tri = null) {
    return new dataApi().findData().then((response) => {
       let data = response.media;
@@ -106,6 +106,7 @@ export default class listPhotos {
       });
     });
   }
+  //ajouts des likes
   addLikes = (e) => {
     this.totalLike += 1;
     const total = document.getElementById("like_total");

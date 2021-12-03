@@ -5,6 +5,7 @@ export default class displayHome {
     this.photographers = [];
     this.tags = [];
   }
+  //template du photographe
   getPhotagrapherTemplate(photographer) {
     return `
     <a href="photographeUnique.html?id=${photographer.id}" title=${
@@ -39,6 +40,7 @@ export default class displayHome {
     if (this.tags.includes(tag)) return;
     this.tags.push(tag);
   }
+  //afficher les photographes
   displayPhotographers() {
     return new dataApi().findData().then((response) => {
       this.photographers = response.photographer;
@@ -53,6 +55,7 @@ export default class displayHome {
     });
   }
 
+  //filter les photographes
   filterPhotographers() {
     const containMain = document.getElementById("contain_cards");
     containMain.innerHTML = "";

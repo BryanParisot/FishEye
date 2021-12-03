@@ -7,6 +7,7 @@ const homeHandler = new displayHome();
 homeHandler.displayPhotographers();
 homeHandler.filterPhotographers;
 
+//filtrer les photographes
 function filterTags() {
   let filtres = document.getElementsByClassName("categories");
 

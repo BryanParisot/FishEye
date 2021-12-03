@@ -1,3 +1,4 @@
+ //affiche le btn quand on scroll
  function scrollDisplayBtn() {
     window.addEventListener("scroll", () => {
       let btn = document.getElementById("btn_home");
