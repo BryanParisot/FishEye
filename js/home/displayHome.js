@@ -59,6 +59,7 @@ export default class displayHome {
   filterPhotographers() {
     const containMain = document.getElementById("contain_cards");
     containMain.innerHTML = "";
+    //console.log(this.photographers);
     return this.photographers
       .filter((photographer) =>
         photographer.tags.reduce((acc, tag) => {

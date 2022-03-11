@@ -105,5 +105,6 @@ export default class profil {
 
 new listPhotos().displayPicture().then(() => {
   new Lightbox().init();
+  // url images tiles
 });
 

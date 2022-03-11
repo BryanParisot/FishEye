@@ -5,22 +5,34 @@ export default class Lightbox {
         'a[href$=".png"],a[href$=".jpg"],a[href$=".jpeg"],a[href$=".mp4"]'
       )
     );
-    console.log(links);
-    const gallery = links.map((link) => link.getAttribute("href"));
-    links.forEach((link) =>
+   // console.log(links);
+   const gallery = links.map((link) => link.getAttribute("href"));
+
+   console.log(gallery)
+   const titles = links.map((link) => link.getAttribute("data-title"));
+   links.forEach((link) =>
       link.addEventListener("click", (e) => {
         e.preventDefault();
         new Lightbox(
           e.currentTarget.getAttribute("href"),
           gallery,
+          titles,
           e.currentTarget.getAttribute("alt")
         );
-        console.log(e);
-      const name = link.getAttribute("data-title");
+        console.log(e)
+        const name = link.getAttribute("data-title");
+
+
      // Le innerHtml ne fonctionne pas ici, pour mettre le name de la photo
-       const nameLigthbox = this.element.querySelector('.ligthbox__name');
-       nameLigthbox.innerHTML = "ffffff"
-       console.log(nameLigthbox)
+       const nameLigthbox = document.getElementById('ligthbox__name');
+       const lightContain = document.getElementById('ligthbox__contain');
+       console.log(lightContain);
+
+       lightContain.removeChild(nameLigthbox)
+       nameLigthbox.innerHTML = "ffffffrrrrrr"
+       lightContain.appendChild(nameLigthbox);
+       console.log(nameLigthbox);
+
       })
     );
   }
@@ -28,30 +40,37 @@ export default class Lightbox {
   /**
    * @param {string} url de l'image
    */
-  constructor(url, images, title) {
+  constructor(url, images, titles,) {
     this.test = null 
     this.element = this.buildDOM(url);
     this.images = images;
-    this.loadImage(url, title);
+    this.titles = titles;
+    console.log('title' , titles)
+    //this.loadImage(url, titles[0]);
     this.onKeyUp = this.onKeyUp.bind(this);
     document.body.appendChild(this.element);
     document.addEventListener("keyup", this.onKeyUp);
+    console.log(this.images);
   }
+
   loadImage(url, title) {
     this.url = null;
     const image = new Image();
     const container = this.element.querySelector(".ligthbox__contain");
     const loader = document.createElement("div");
-    container.innerHTML = "";
+    const paragraphe = document.createElement('p')
+    paragraphe.innerHTML=title
+    container.innerHTML = "aaaa";
     loader.classList.add("ligthbox__loader");
     container.appendChild(loader);
     image.onload = () => {
       container.removeChild(loader);
       container.appendChild(image);
+      container.appendChild(paragraphe)
       this.url = url;
     };
     image.src = url;
-    image.alt = title;
+    image.alt = 'aaaaa';
 
   }
 
@@ -91,20 +110,21 @@ export default class Lightbox {
     this.loadImage(this.images[i - 1]);
   }
 
-  buildDOM(url) {
+  buildDOM(url,titles) {
     const dom = document.createElement("div");
     dom.classList.add("ligthbox");
     dom.innerHTML = `
-    <button aria-label="close" class="ligthbox__close"><i class="fas fa-times"></i></button>
-    <button aria-label="next" class="ligthbox__next">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-    <button aria-label="prev" class="ligthbox__prev">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <div class="ligthbox__contain">
-    </div>
-    <p class="ligthbox__name">Name doit apparaitre ici</p>
+      <button aria-label="close" class="ligthbox__close"><i class="fas fa-times"></i></button>
+      <button aria-label="next" class="ligthbox__next">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <button aria-label="prev" class="ligthbox__prev">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <div class="ligthbox__contain" id="ligthbox__contain">
+      
+      </div>
+      <p class="ligthbox__name" id="ligthbox__name">Name doit apparaitre ici</p>
     `;
     dom
       .querySelector(".ligthbox__close")
