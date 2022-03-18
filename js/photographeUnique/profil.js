@@ -1,6 +1,5 @@
 import dataApi from "../dataUser/dataApi.js";
 import listPhotos from "./listPhotos.js";
-import dropDown from "./dropDown.js";
 import Lightbox from "./ligthbox.js";
 
 export default class profil {

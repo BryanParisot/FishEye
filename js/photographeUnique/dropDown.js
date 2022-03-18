@@ -1,3 +1,4 @@
+import Lightbox from "./ligthbox.js";
 import listPhotos from "./listPhotos.js";
 
 export default class dropDown {
@@ -35,6 +36,8 @@ export default class dropDown {
           new listPhotos().displayPicture(2);
           this.btnTri.innerHTML = "Titre";
         }
+        console.log('lightBox init')
+        new Lightbox().init()
       })
     );
      this.displayBtn();

@@ -5,34 +5,32 @@ export default class Lightbox {
         'a[href$=".png"],a[href$=".jpg"],a[href$=".jpeg"],a[href$=".mp4"]'
       )
     );
-   // console.log(links);
-   const gallery = links.map((link) => link.getAttribute("href"));
-
-   console.log(gallery)
-   const titles = links.map((link) => link.getAttribute("data-title"));
-   links.forEach((link) =>
+    console.log(links);
+    const gallery = links.map((link) => link.getAttribute("href"));
+    const titles = links.map(
+      (link) => link.childNodes[0].alt || link.childNodes[0].title
+    );
+    links.forEach((link) =>
       link.addEventListener("click", (e) => {
         e.preventDefault();
         new Lightbox(
           e.currentTarget.getAttribute("href"),
           gallery,
-          titles,
-          e.currentTarget.getAttribute("alt")
+          e.currentTarget.childNodes[0].alt ||
+            e.currentTarget.childNodes[0].title,
+          titles
         );
-        console.log(e)
         const name = link.getAttribute("data-title");
+        // Le innerHtml ne fonctionne pas ici, pour mettre le name de la photo
+        console.log("name", name);
+        const nameLight = document.createElement("p");
+        nameLight.className("ligthbox__name");
+        nameLight.innerHTML = "eeeee";
+        dom.appendChild(nameLight);
 
-
-     // Le innerHtml ne fonctionne pas ici, pour mettre le name de la photo
-       const nameLigthbox = document.getElementById('ligthbox__name');
-       const lightContain = document.getElementById('ligthbox__contain');
-       console.log(lightContain);
-
-       lightContain.removeChild(nameLigthbox)
-       nameLigthbox.innerHTML = "ffffffrrrrrr"
-       lightContain.appendChild(nameLigthbox);
-       console.log(nameLigthbox);
-
+        // const nameLigthbox = this.element.querySelector(".ligthbox__name");
+        // console.log('test' + nameLigthbox );
+        //nameLigthbox.innerHTML = "ffffff"
       })
     );
   }
@@ -40,38 +38,37 @@ export default class Lightbox {
   /**
    * @param {string} url de l'image
    */
-  constructor(url, images, titles,) {
-    this.test = null 
-    this.element = this.buildDOM(url);
+  constructor(url, images, title, titles) {
+    if (!url && !images && !title) return;
+    console.log({ url, images, title });
+    this.test = null;
+    this.element = this.buildDOM(url, title);
     this.images = images;
     this.titles = titles;
-    console.log('title' , titles)
-    //this.loadImage(url, titles[0]);
+    console.log({ images, titles });
+    this.loadImage(url, title);
     this.onKeyUp = this.onKeyUp.bind(this);
     document.body.appendChild(this.element);
     document.addEventListener("keyup", this.onKeyUp);
-    console.log(this.images);
   }
 
   loadImage(url, title) {
     this.url = null;
+    this.title = title;
     const image = new Image();
     const container = this.element.querySelector(".ligthbox__contain");
+    console.log({ container });
     const loader = document.createElement("div");
-    const paragraphe = document.createElement('p')
-    paragraphe.innerHTML=title
-    container.innerHTML = "aaaa";
+    container.innerHTML = "";
     loader.classList.add("ligthbox__loader");
     container.appendChild(loader);
     image.onload = () => {
       container.removeChild(loader);
       container.appendChild(image);
-      container.appendChild(paragraphe)
       this.url = url;
     };
     image.src = url;
-    image.alt = 'aaaaa';
-
+    image.alt = title;
   }
 
   onKeyUp(e) {
@@ -98,7 +95,7 @@ export default class Lightbox {
     if (i === this.images.length - 1) {
       i = -1;
     }
-    this.loadImage(this.images[i + 1]);
+    this.loadImage(this.images[i + 1], this.titles[i + 1]);
   }
 
   prev(e) {
@@ -107,24 +104,22 @@ export default class Lightbox {
     if (i === 0) {
       i = this.images.length;
     }
-    this.loadImage(this.images[i - 1]);
+    this.loadImage(this.images[i - 1], this.titles[i - 1]);
   }
 
-  buildDOM(url,titles) {
-    const dom = document.createElement("div");
+  buildDOM(url, name) {
+    var dom = document.createElement("div");
     dom.classList.add("ligthbox");
     dom.innerHTML = `
-      <button aria-label="close" class="ligthbox__close"><i class="fas fa-times"></i></button>
-      <button aria-label="next" class="ligthbox__next">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-      <button aria-label="prev" class="ligthbox__prev">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <div class="ligthbox__contain" id="ligthbox__contain">
-      
-      </div>
-      <p class="ligthbox__name" id="ligthbox__name">Name doit apparaitre ici</p>
+    <button aria-label="close" class="ligthbox__close"><i class="fas fa-times"></i></button>
+    <button aria-label="next" class="ligthbox__next">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <button aria-label="prev" class="ligthbox__prev">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="ligthbox__contain">
+    </div>
     `;
     dom
       .querySelector(".ligthbox__close")
