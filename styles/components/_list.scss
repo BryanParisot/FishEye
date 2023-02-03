@@ -1,31 +1,29 @@
-
-.list_tri{
-
-    .list_tri_btn{
-
-        .btn_tri{
-            @include btn;
-            background:#901C1C;
-            color: white;
-            position: relative;
-            height: auto;
-            padding: 20px 0px;
-        }
-        ul{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            li{
-                font-size: 16px;
-                border-bottom: 1px solid white;
-                width: 95%;
-                text-align: center;
-                margin-bottom: 13px;
-                padding-bottom: 10px;
-
-            }
-        }
-
-
+.list_tri {
+  .list_tri_btn {
+    .btn_tri {
+      @include btn;
+      background: #901c1c;
+      color: white;
+      position: relative;
+      height: auto;
+      padding: 20px 0px;
     }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      li {
+        font-size: 16px;
+        border-bottom: 1px solid white;
+        width: 95%;
+        text-align: center;
+        margin-bottom: 13px;
+        padding-bottom: 10px;
+
+        .color-white {
+          color: white !important;
+        }
+      }
+    }
+  }
 }

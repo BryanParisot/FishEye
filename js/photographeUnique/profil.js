@@ -11,18 +11,18 @@ export default class profil {
         if (id != photographer.id) {
           return false;
         }
-        const createProfilUnique = document.createElement("div");
-        const profil = document.getElementById("aaa");
+        const createProfileUnique = document.createElement("div");
+        const profile = document.getElementById("aaa");
         const namePh = document.getElementById("namePh");
-        createProfilUnique.className = "container_description_profil";
+        createProfileUnique.className = "container_description_profil";
 
-        profil.appendChild(createProfilUnique);
+        profile.appendChild(createProfileUnique);
         namePh.innerText = `${photographer.name}`;
-        // createProfilUnique.innerHTML= contenuHtml
+        // createProfileUnique.innerHTML= contenuHtml
 
         //div secondaire
-        const containterDescription = document.createElement("div");
-        containterDescription.className = "container_description_flex";
+        const containerDescription = document.createElement("div");
+        containerDescription.className = "container_description_flex";
 
         //containerForWidth
         const containerForWidth = document.createElement("div");
@@ -32,15 +32,15 @@ export default class profil {
         const createTitle = document.createElement("h2");
         createTitle.className = "name_profil";
         createTitle.innerHTML = `${photographer.name}`;
-        // <p ville
-        const createParagrapheVille = document.createElement("h3");
-        createParagrapheVille.className = "ville_profil";
-        createParagrapheVille.innerHTML = `${photographer.city}, ${photographer.country}`;
+        // <p city
+        const createParagraphCity = document.createElement("h3");
+        createParagraphCity.className = "ville_profil";
+        createParagraphCity.innerHTML = `${photographer.city}, ${photographer.country}`;
 
         //<p txt profil
-        const createParaProfil = document.createElement("p");
-        createParaProfil.className = "txt_profil";
-        createParaProfil.innerHTML = `${photographer.tagline}`;
+        const createParaProfile = document.createElement("p");
+        createParaProfile.className = "txt_profil";
+        createParaProfile.innerHTML = `${photographer.tagline}`;
 
         // <ul list tag
         const createListTag = document.createElement("ul");
@@ -82,28 +82,26 @@ export default class profil {
         createImg.alt = `Photo de ${photographer.name}`;
 
         //placement des création
-        containterDescription.appendChild(containerForWidth);
+        containerDescription.appendChild(containerForWidth);
         containerForWidth.appendChild(createTitle);
-        containerForWidth.appendChild(createParagrapheVille);
-        containerForWidth.appendChild(createParaProfil);
+        containerForWidth.appendChild(createParagraphCity);
+        containerForWidth.appendChild(createParaProfile);
         containerForWidth.appendChild(createListTag);
-        containterDescription.appendChild(divBtn);
+        containerDescription.appendChild(divBtn);
         divBtn.appendChild(createBtn);
         divImg.appendChild(createImg);
-        createProfilUnique.appendChild(containterDescription);
-        createProfilUnique.appendChild(divImg);
+        createProfileUnique.appendChild(containerDescription);
+        createProfileUnique.appendChild(divImg);
 
         //tarif
-        const tarifs = document.getElementById("tarif");
-        tarifs.innerHTML = `${photographer.price}€ / jours`;
+        const tariffs = document.getElementById("tarif");
+        tariffs.innerHTML = `${photographer.price}€ / jours`;
       });
     });
   }
 }
 
-
 new listPhotos().displayPicture().then(() => {
   new Lightbox().init();
   // url images tiles
 });
-

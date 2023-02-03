@@ -20,7 +20,7 @@ a {
   border: none;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: white;
 }
 
 button {
@@ -355,7 +355,7 @@ header nav ul li {
   font-size: 18px;
   font-weight: bold;
   background-color: #db8876;
-  background: #901C1C;
+  background: #901c1c;
   color: white;
   position: relative;
   height: auto;
@@ -373,6 +373,9 @@ header nav ul li {
   text-align: center;
   margin-bottom: 13px;
   padding-bottom: 10px;
+}
+.list_tri .list_tri_btn ul li .color-white {
+  color: white !important;
 }
 
 .container_picture {
@@ -588,6 +591,7 @@ header nav ul li {
 
 .ligthbox__contain {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-left: 50px;
@@ -601,17 +605,13 @@ header nav ul li {
   object-fit: cover;
 }
 
-.ligthbox.fadeOut {
-  opacity: 0;
+.ligthbox__contain .video_lightbox {
+  width: 1050px;
+  height: 650px;
 }
 
-.ligthbox__name {
-  position: absolute;
-  z-index: 1000000;
-  font-size: 14px;
-  top: 730px;
-  left: 200px;
-  color: red;
+.ligthbox.fadeOut {
+  opacity: 0;
 }
 
 @keyframes animationLightBox {}
@@ -620,6 +620,12 @@ header nav ul li {
     width: 280px;
     height: 250px;
     object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .ligthbox__contain .video_lightbox {
+    width: 280px;
+    height: 250px;
     border-radius: 5px;
   }
 
@@ -643,7 +649,7 @@ header nav ul li {
   }
 
   .ligthbox__name {
-    color: #901C1C;
+    color: #901c1c;
     top: 532px;
     right: 565px;
   }

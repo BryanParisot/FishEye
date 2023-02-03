@@ -5,12 +5,11 @@ export default class Lightbox {
         'a[href$=".png"],a[href$=".jpg"],a[href$=".jpeg"],a[href$=".mp4"]'
       )
     );
-    console.log(links);
     const gallery = links.map((link) => link.getAttribute("href"));
     const titles = links.map(
       (link) => link.childNodes[0].alt || link.childNodes[0].title
     );
-    links.forEach((link) =>
+    links.forEach((link) => {
       link.addEventListener("click", (e) => {
         e.preventDefault();
         new Lightbox(
@@ -21,18 +20,8 @@ export default class Lightbox {
           titles
         );
         const name = link.getAttribute("data-title");
-        // Le innerHtml ne fonctionne pas ici, pour mettre le name de la photo
-        console.log("name", name);
-        const nameLight = document.createElement("p");
-        nameLight.className("ligthbox__name");
-        nameLight.innerHTML = "eeeee";
-        dom.appendChild(nameLight);
-
-        // const nameLigthbox = this.element.querySelector(".ligthbox__name");
-        // console.log('test' + nameLigthbox );
-        //nameLigthbox.innerHTML = "ffffff"
-      })
-    );
+      });
+    });
   }
 
   /**
@@ -40,12 +29,9 @@ export default class Lightbox {
    */
   constructor(url, images, title, titles) {
     if (!url && !images && !title) return;
-    console.log({ url, images, title });
-    this.test = null;
     this.element = this.buildDOM(url, title);
     this.images = images;
     this.titles = titles;
-    console.log({ images, titles });
     this.loadImage(url, title);
     this.onKeyUp = this.onKeyUp.bind(this);
     document.body.appendChild(this.element);
@@ -53,22 +39,60 @@ export default class Lightbox {
   }
 
   loadImage(url, title) {
-    this.url = null;
+    this.url = url;
     this.title = title;
+
     const image = new Image();
+    const video = document.createElement("video");
+    video.classList.add("video_lightbox");
+
     const container = this.element.querySelector(".ligthbox__contain");
-    console.log({ container });
     const loader = document.createElement("div");
+    const containTittle = document.createElement("div");
+    container.appendChild(containTittle);
+
     container.innerHTML = "";
+
     loader.classList.add("ligthbox__loader");
-    container.appendChild(loader);
-    image.onload = () => {
-      container.removeChild(loader);
-      container.appendChild(image);
-      this.url = url;
-    };
-    image.src = url;
-    image.alt = title;
+    loader.innerHTML =
+      '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"style = "margin: auto; background: none; display: block; shape-rendering: auto;" width = "200px" height = "200px" viewBox = "0 0 100 100" preserveAspectRatio = "xMidYMid" ><path d = "M17 50A33 33 0 0 0 83 50A33 34.6 0 0 1 17 50" fill = "#911616" stroke = "none"><animateTransform attributeName = "transform" type = "rotate" dur = "1.5384615384615383s" repeatCount = "indefinite" keyTimes = "0;1" values = "0 50 50.8;360 50 50.8"></animateTransform></path></svg>';
+
+    containTittle.appendChild(loader);
+    const h1 = document.createElement("h1");
+    h1.classList.add("ligthbox__name");
+    h1.textContent = title;
+
+    if (url.includes("jpg")) {
+      container.appendChild(containTittle);
+      containTittle.appendChild(image);
+      containTittle.appendChild(h1);
+      image.src = url;
+      containTittle.removeChild(loader);
+      return url;
+    } else if (url.includes("mp4")) {
+      container.appendChild(containTittle);
+      containTittle.appendChild(video);
+      containTittle.appendChild(h1);
+      video.controls = true;
+      video.src = url;
+      containTittle.removeChild(loader);
+      return url;
+    }
+
+    //     image.onload = () => {
+    //       console.log("image");
+
+    //       containTittle.appendChild(image);
+
+    //       container.removeChild(loader);
+    //       container.appendChild(containTittle);
+    //       containTittle.appendChild(h1);
+
+    //       this.url = url;
+    //     };
+    //     image.src = url;
+    //     image.alt = title;
+    // }
   }
 
   onKeyUp(e) {

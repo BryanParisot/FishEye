@@ -1,4 +1,5 @@
 import dataApi from "../dataUser/dataApi.js";
+import Lightbox from "./ligthbox.js";
 
 export default class listPhotos {
   constructor(url) {
@@ -6,17 +7,19 @@ export default class listPhotos {
   }
   //afficher les photos des utilisateurs
   displayPicture(tri = null) {
-   return new dataApi().findData().then((response) => {
+    return new dataApi().findData().then((response) => {
       let data = response.media;
       if (tri === 2) {
-        data = data.sort((a, b) => a.title >  b.title ? 1 : -1 );
-      }else if (tri === 1){
-        data = data.sort((a, b ) => new Date(a.date).valueOf() - new Date(b.date).valueOf())
-      }else if(tri === 0){
-        data = data.sort((a, b) => a.likes - b.likes)
+        data = data.sort((a, b) => (a.title > b.title ? 1 : -1));
+      } else if (tri === 1) {
+        data = data.sort(
+          (a, b) => new Date(a.date).valueOf() - new Date(b.date).valueOf()
+        );
+      } else if (tri === 0) {
+        data = data.sort((a, b) => a.likes - b.likes);
       }
-      const divContainPicture = document.getElementById("contain_picture")
-      divContainPicture.innerHTML = ''
+      const divContainPicture = document.getElementById("contain_picture");
+      divContainPicture.innerHTML = "";
 
       data.map((media) => {
         let id = window.location.search.split("id=")[1];
@@ -34,11 +37,12 @@ export default class listPhotos {
         //lien de l'image
         const lien = document.createElement("a");
         lien.href = `${media.image}`;
-        lien.setAttribute("data-title",media.title);
+        lien.setAttribute("data-title", media.title);
 
         //lien de vdo
         const lien_vdo = document.createElement("a");
         lien_vdo.href = `${media.video}`;
+        lien_vdo.setAttribute("data-title", media.title);
 
         //img
         const img_photographe = document.createElement("img");
@@ -104,6 +108,7 @@ export default class listPhotos {
         const total = document.getElementById("like_total");
         total.innerHTML = `${this.totalLike}`;
       });
+      new Lightbox().init();
     });
   }
   //ajouts des likes

@@ -16,7 +16,7 @@ export default class dropDown {
     });
   }
 
-  //tri des photos / vidéos 
+  //tri des photos / vidéos
   tri() {
     let sortBtn = Array.from(document.getElementsByClassName("tri"));
 
@@ -27,20 +27,16 @@ export default class dropDown {
         if (index === 0) {
           new listPhotos().displayPicture(0);
           this.btnTri.innerHTML = "Popularité";
-
         } else if (index === 1) {
           new listPhotos().displayPicture(1);
           this.btnTri.innerHTML = "Date";
-
         } else if (index === 2) {
           new listPhotos().displayPicture(2);
           this.btnTri.innerHTML = "Titre";
         }
-        console.log('lightBox init')
-        new Lightbox().init()
+        new Lightbox().init();
       })
     );
-     this.displayBtn();
+    this.displayBtn();
   }
 }
-
