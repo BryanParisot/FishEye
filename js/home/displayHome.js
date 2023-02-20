@@ -40,6 +40,7 @@ export default class displayHome {
     if (this.tags.includes(tag)) return;
     this.tags.push(tag);
   }
+  
   //afficher les photographes
   displayPhotographers() {
     return new dataApi().findData().then((response) => {
@@ -59,14 +60,13 @@ export default class displayHome {
   filterPhotographers() {
     const containMain = document.getElementById("contain_cards");
     containMain.innerHTML = "";
-    //console.log(this.photographers);
-    return this.photographers
+    this.photographers
       .filter((photographer) =>
         photographer.tags.reduce((acc, tag) => {
           return acc || this.tags.includes(tag);
         }, false)
       )
-      .map((photographer) => {
+      .forEach((photographer) => {
         const templatePhotographer = this.getPhotagrapherTemplate(photographer);
         let create = document.createElement("article");
         create.className = photographer.tags.join(" ") + " articlePhotographer";
