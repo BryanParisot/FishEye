@@ -1,5 +1,5 @@
 
-![Logo]([https://raw.githubusercontent.com/BryanParisot/ParisotBryan_4_02082021/main/starterOnly/Logo.png](https://ogniter.fr/OpenClassrooms/React/p6/assets/images/logo.png))
+![Logo](https://ogniter.fr/OpenClassrooms/React/p6/assets/images/logo.png)
 
 
 # FishEye
@@ -8,7 +8,7 @@ FishEye est un site web qui permet aux photographes indépendants de présenter 
 
 Lien maquette : https://www.figma.com/file/Q3yNeD7WTK9QHDldg9vaRl/UI-Design-FishEye-FR?type=design&node-id=0-1
 
-## Mission 
+## Mision 
 
 Construire un prototype fonctionnel d'un nouveau site web que nous pourrons présenter à FishEye lors de notre prochaine réunion avec les clients. Tu seras chargé de fournir tout le HTML, le CSS et le JavaScript nécessaires au prototype.
 
